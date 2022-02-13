@@ -33,7 +33,7 @@ const rankings = async (type = "total", optionsGiven = {}) => {
   if (!customPuppeteerProvided) {
     browser = await puppeteer.launch({
       headless: !debug, // when debug is true => headless should be false
-      args: ['--start-maximized'],
+      args: ['--start-maximized', '--no-sandbox'],
     });
   }
   customPuppeteerProvided && warnIfNotUsingStealth(browser);
