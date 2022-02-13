@@ -68,7 +68,7 @@ const offersByUrl = async (url, optionsGiven = {}) => {
   let browser = browserInstance;
   if (!customPuppeteerProvided) {
     browser = await puppeteer.launch({
-      headless: !debug, // when debug is true => headless should be false
+      // headless: !debug, // when debug is true => headless should be false
       args: ['--start-maximized', '--no-sandbox','--disable-setuid-sandbox'],
     });
   }
