@@ -77,7 +77,7 @@ const offersByScrollingByUrl = async (url, resultSize, optionsGiven = {}) => {
   if (!customPuppeteerProvided) {
     browser = await puppeteer.launch({
       headless: !debug, // when debug is true => headless should be false
-      args: ['--start-maximized', '--no-sandbox'],
+      args: ['--start-maximized', '--no-sandbox','--disable-setuid-sandbox'],
     });
   }
   customPuppeteerProvided && warnIfNotUsingStealth(browser);
